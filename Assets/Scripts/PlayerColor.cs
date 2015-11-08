@@ -4,16 +4,33 @@ using System.Collections.Generic;
 
 public class PlayerColor : MonoBehaviour {
 
-	public List<Color> colors;
-	public float numToSpawn = 8;
+	public static Color[] colors = new Color[9];
 
-	IEnumerator Start(){
-		colors = GenerateObstacles.colors;
-		yield return new WaitForEndOfFrame();
+
+	void Start(){
+		colors[0] = Color.blue;
+		colors[1] = Color.red;
+		colors[2] = Color.green;
+		colors[3] = Color.black;
+		colors[4] = Color.yellow;
+		colors[5] = Color.cyan;
+		colors[6] = Color.grey;
+		colors[7] = Color.white;
+		colors[8] = Color.magenta;
 	}
 
 	// Update is called once per frame
 	void Update () {
-		this.GetComponent<Renderer>().material.color = colors[1];
+		ColorChange();
+	}
+	
+
+	void ColorChange(){
+		if (Time.time%1 <= 0.2) {
+			Material m = GetComponent<Renderer>().material;
+			int x = Random.Range(0, 8);
+			Debug.Log(colors[x]);
+			m.color = colors[Random.Range(0, 8)];
+		}
 	}
 }
