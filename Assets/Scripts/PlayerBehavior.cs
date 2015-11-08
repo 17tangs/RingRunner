@@ -12,7 +12,7 @@ public class PlayerBehavior : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		rb = GetComponent<Rigidbody2D> ();
-		desired = transform.position;
+	//	desired = transform.position;
 	}
 /*	void OnCollisionStay2D(Collision2D obs){
 		jump = true;
