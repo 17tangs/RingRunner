@@ -12,7 +12,7 @@ public class GenerateObstacles : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		obstacles = Resources.LoadAll<GameObject>("Prefabs");
-		radius = ring.GetComponent<CircleCollider2D> ().radius;
+		radius = ring.GetComponent<CircleCollider2D> ().radius * ring.GetComponent<Transform>().localScale;
 	}
 
 	void SpawnRandomObject() 
