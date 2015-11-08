@@ -6,7 +6,7 @@ public class GenerateObstacles : MonoBehaviour {
 	public static GameObject[] obstacles;
 	public GameObject ring;
 	public static int numSpawned = 0;
-	public static int numToSpawn = 5;
+	public static int numToSpawn = 8;
 	float radius;
 
 	// Use this for initialization
