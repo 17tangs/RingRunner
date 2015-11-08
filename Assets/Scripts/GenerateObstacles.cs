@@ -8,12 +8,13 @@ public class GenerateObstacles : MonoBehaviour {
 	public static Color[] colors = new Color[9];
 	public Color c;
 	public GameObject ring;
-	public static int numSpawned = 0;
-	public static int numToSpawn = 3;
+	public int numSpawned;
+	public int numToSpawn = 3;
 	float radius;
 
 	// Use this for initialization
 	void Start () {
+		numSpawned = 0;
 		obstacles = Resources.LoadAll<GameObject>("Prefabs");
 		radius = (ring.GetComponent<CircleCollider2D> ().radius) * (ring.GetComponent<Transform>().localScale.x);
 		colors[0] = Color.blue;
@@ -29,10 +30,9 @@ public class GenerateObstacles : MonoBehaviour {
 
 	void SpawnRandomObject() 
 	{    
-		//spawns item in array position between 0 and 100
-		int whichItem = Random.Range (0, numToSpawn);
+		//position of target prefab
+		int whichItem = 0;
 		GameObject myObj = Instantiate (obstacles [whichItem]) as GameObject;
-		//GameObject myObj = Resources.Load<GameObject>("Prefabs/Obstacle") as GameObject;
 		numSpawned++;
 		float theta = Random.Range(-180, 180);
 		float x = radius*Mathf.Cos(theta);
