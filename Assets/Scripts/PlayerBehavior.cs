@@ -5,12 +5,20 @@ public class PlayerBehavior : MonoBehaviour {
 	public Rigidbody2D rb;
 	public GameObject planet;
 	private float acceleration = 100f;
+	private bool jump = false;
 	// Use this for initialization
 	void Start () {
 		rb = GetComponent<Rigidbody2D> ();
 		
 	}
-	
+	private int i;
+	void OnCollisionEnter2D(Collision2D obs){
+		if (obs.gameObject.name.Contains("Ring")) {
+			i++;
+			Debug.Log(i);
+			jump = true;
+		}
+	}
 	// Update is called once per frame
 	void FixedUpdate () {
 		//transform.rotation = Quaternion.Euler (0, 0, Mathf.Atan2(transform.position.y, transform.position.x));
@@ -23,9 +31,10 @@ public class PlayerBehavior : MonoBehaviour {
 		
 		rb.AddForce(posDiff.normalized * acceleration);
 		if (Input.GetKey (KeyCode.Space)) {
-			Debug.Log (5);
 			Vector3 n = Quaternion.Euler(0, 0, -30) * -posDiff;
-			rb.velocity = n.normalized*20;
+			if(jump == true){
+				rb.velocity = n.normalized*20;
+			}
 			//rb.AddForce(n.normalized*20,ForceMode2D.Impulse);
 			//Vector3 op = transform.position;
 			//transform.position = new Vector3(op.x, op.y+0.5f, op.z);
