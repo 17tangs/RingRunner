@@ -259,7 +259,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1542088844}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.26999998, y: 5.76000023, z: 0}
+  m_LocalPosition: {x: 2.13000011, y: 5.61000013, z: 0}
   m_LocalScale: {x: .100000001, y: .100000001, z: .100000001}
   m_Children: []
   m_Father: {fileID: 0}
@@ -275,7 +275,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 338c873039e4d334e847439f31450b04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 0}
+  rb: {fileID: 1542088848}
   planet: {fileID: 1051662801}
 --- !u!50 &1542088848
 Rigidbody2D:
@@ -318,6 +318,7 @@ GameObject:
   - 92: {fileID: 2023552058}
   - 124: {fileID: 2023552057}
   - 81: {fileID: 2023552056}
+  - 114: {fileID: 2023552061}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -366,7 +367,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 6.81284332
+  orthographic size: 1.64999998
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -392,3 +393,16 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
+--- !u!114 &2023552061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2023552055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fab494d0ffa448438cd4de92d35463f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_DampTime: 0
+  m_Targets: {fileID: 1542088846}
