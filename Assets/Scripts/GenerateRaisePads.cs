@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using System.Collections;
-using System.Math;
 
 public class GenerateRaisePads : MonoBehaviour {
 
@@ -24,7 +23,7 @@ public class GenerateRaisePads : MonoBehaviour {
 		float theta = Random.Range(-180, 180);
 		float x = radius*Mathf.Cos(theta);
 		float y = radius*Mathf.Sin(theta);
-		float y = radius*Mathf.Tan(theta);
+		float ang = radius*Mathf.Tan(theta);
 		//where your instantiated object spawns from
 		myObj.transform.position = new Vector3(x, y, 0);
 	}
@@ -38,6 +37,6 @@ public class GenerateRaisePads : MonoBehaviour {
 	}
 
 	float toDegrees(float rad){
-		return rad * 180 / Math.PI;
+		return rad * 180 / (float)System.Math.PI;
 	}
 }
