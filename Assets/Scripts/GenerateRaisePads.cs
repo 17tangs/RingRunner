@@ -3,7 +3,6 @@ using System.Collections;
 
 public class GenerateRaisePads : MonoBehaviour {
 
-	public static GameObject[] raisePads;
 	public GameObject ring;
 	public static int numSpawned = 0;
 	public static int numToSpawn = 8;
@@ -16,16 +15,16 @@ public class GenerateRaisePads : MonoBehaviour {
 	
 	void SpawnRandomObject() 
 	{    
-		//spawns item in array position between 0 and numToSpawn
-		int whichItem = Random.Range (0, numToSpawn);
-		GameObject myObj = Instantiate (raisePads [whichItem]) as GameObject;
+		GameObject myObj = Resources.Load<GameObject>("RaisePad") as GameObject;
+		myObj.gameObject.name = "RaisePad"+ring.name.Substring(4);
 		numSpawned++;
 		float theta = Random.Range(-180, 180);
-		float x = radius*Mathf.Cos(theta);
-		float y = radius*Mathf.Sin(theta);
-		float ang = radius*Mathf.Tan(theta);
+		float x = radius*Mathf.Cos(toRad(theta));
+		float y = radius*Mathf.Sin(toRad(theta));
+		float ang = radius*Mathf.Tan(toRad(theta));
 		//where your instantiated object spawns from
 		myObj.transform.position = new Vector3(x, y, 0);
+		myObj.transform.rotation = Quaternion.AngleAxis(toDeg (ang), Vector3.forward);
 	}
 	
 	// Update is called once per frame
@@ -36,7 +35,11 @@ public class GenerateRaisePads : MonoBehaviour {
 		}
 	}
 
-	float toDegrees(float rad){
+	float toDeg(float rad){
 		return rad * 180 / (float)System.Math.PI;
+	}
+
+	float toRad(float deg){
+		return deg * (float)System.Math.PI / 180;
 	}
 }
