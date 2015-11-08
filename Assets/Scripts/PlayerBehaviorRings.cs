@@ -7,7 +7,11 @@ public class PlayerBehaviorRings : MonoBehaviour {
 	public GameObject currentRing;
 	public GameObject ring1;
 	public GameObject ring2;
-	
+
+	void Start () {
+		currentRing = ring1;
+	}
+
 	void OnCollisionEnter2D(Collision2D obs){
 		Debug.Log ("collision");
 
