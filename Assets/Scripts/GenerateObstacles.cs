@@ -32,12 +32,16 @@ public class GenerateObstacles : MonoBehaviour {
 		//spawns item in array position between 0 and 100
 		int whichItem = Random.Range (0, numToSpawn);
 		GameObject myObj = Instantiate (obstacles [whichItem]) as GameObject;
+		//GameObject myObj = Resources.Load<GameObject>("Prefabs/Obstacle") as GameObject;
 		numSpawned++;
 		float theta = Random.Range(-180, 180);
 		float x = radius*Mathf.Cos(theta);
 		float y = radius*Mathf.Sin(theta);
+		float ang = radius*Mathf.Tan(toRad(theta));
 		//where your instantiated object spawns from
-		myObj.transform.position = new Vector3(x, y, 0);
+		myObj.transform.position = new Vector3 (x, y, 0);
+		myObj.transform.rotation = Quaternion.AngleAxis(toDeg (ang), Vector3.forward);
+
 		c = colors[Random.Range(0, 8)];
 		myObj.GetComponent<Renderer>().material.color = c;
 	}
@@ -48,5 +52,13 @@ public class GenerateObstacles : MonoBehaviour {
 		{
 			SpawnRandomObject ();
 		}
+	}
+
+	float toDeg(float rad){
+		return rad * 180 / (float)System.Math.PI;
+	}
+	
+	float toRad(float deg){
+		return deg * (float)System.Math.PI / 180;
 	}
 }

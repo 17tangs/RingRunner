@@ -15,7 +15,7 @@ public class GenerateRaisePads : MonoBehaviour {
 	
 	void SpawnRandomObject() 
 	{    
-		GameObject myObj = Resources.Load<GameObject>("RaisePad") as GameObject;
+		GameObject myObj = Resources.Load<GameObject>("Prefabs/RaisePad") as GameObject;
 		myObj.gameObject.name = "RaisePad"+ring.name.Substring(4);
 		numSpawned++;
 		float theta = Random.Range(-180, 180);
