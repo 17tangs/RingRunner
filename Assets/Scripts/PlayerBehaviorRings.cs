@@ -7,6 +7,7 @@ public class PlayerBehaviorRings : MonoBehaviour {
 	public GameObject currentRing;
 	public GameObject ring1;
 	public GameObject ring2;
+	public GameObject ring3;
 
 	void Start () {
 		currentRing = ring1;
@@ -20,11 +21,19 @@ public class PlayerBehaviorRings : MonoBehaviour {
 		if (obs.gameObject.name.Contains(ringNow())){
 			Debug.Log ("gap");
 			currentRing.gameObject.GetComponent<Collider2D>().enabled=false;
-			currentRing=ring2;
+			currentRing=nextRing();
 		}
 	}
 
 	string ringNow(){
 		return "Gap"+currentRing.gameObject.name.Substring (4);
+	}
+
+	GameObject nextRing(){
+		if (currentRing == ring1)
+			return ring2;
+		else if (currentRing == ring2)
+			return ring3;
+		return currentRing;
 	}
 }
