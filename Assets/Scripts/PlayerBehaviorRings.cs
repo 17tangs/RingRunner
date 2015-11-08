@@ -6,6 +6,7 @@ public class PlayerBehaviorRings : MonoBehaviour {
 	public GameObject ring1;
 	public GameObject ring2;
 	public GameObject ring3;
+	public GameObject ring4;
 
 	void Start () {
 		currentRing = ring1;
@@ -19,12 +20,14 @@ public class PlayerBehaviorRings : MonoBehaviour {
 		if (obs.gameObject.name.Contains(ringNow())&&obs.gameObject.name.Contains("Gap")){
 			Debug.Log ("gap");
 			currentRing.gameObject.GetComponent<Collider2D>().enabled=false;
+			currentRing.gameObject.GetComponent<SpriteRenderer>().enabled = false;
 			currentRing=nextRing();
 		}
 		if (obs.gameObject.name.Contains(ringNow())&&obs.gameObject.name.Contains("RaisePad")){
 			Debug.Log ("raise");
 			currentRing=prevRing();
 			currentRing.gameObject.GetComponent<Collider2D>().enabled=true;
+			currentRing.gameObject.GetComponent<SpriteRenderer>().enabled = true;
 		}
 	}
 
@@ -37,6 +40,8 @@ public class PlayerBehaviorRings : MonoBehaviour {
 			return ring2;
 		else if (currentRing == ring2)
 			return ring3;
+		else if (currentRing == ring3)
+			return ring4;
 		return currentRing;
 	}
 
@@ -45,6 +50,8 @@ public class PlayerBehaviorRings : MonoBehaviour {
 			return ring1;
 		else if (currentRing == ring3)
 			return ring2;
+		else if (currentRing == ring4)
+			return ring3;
 		return currentRing;
 	}
 }
