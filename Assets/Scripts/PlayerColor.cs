@@ -26,11 +26,10 @@ public class PlayerColor : MonoBehaviour {
 	
 
 	void ColorChange(){
-		if (Time.time%1 <= 0.2) {
+		if (Time.time%2 <= 0.1) {
 			Material m = GetComponent<Renderer>().material;
 			int x = Random.Range(0, 8);
-			Debug.Log(colors[x]);
-			m.color = colors[Random.Range(0, 8)];
+			m.color = colors[x];
 		}
 	}
 }

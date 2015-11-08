@@ -336,7 +336,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fab494d0ffa448438cd4de92d35463f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_DampTime: 0
+  m_DampTime: .200000003
   m_Targets: {fileID: 1107694198}
 --- !u!1001 &503168993
 Prefab:
@@ -579,11 +579,11 @@ GameObject:
   m_Component:
   - 4: {fileID: 1107694198}
   - 212: {fileID: 1107694197}
-  - 61: {fileID: 1107694196}
   - 114: {fileID: 1107694200}
   - 50: {fileID: 1107694199}
   - 114: {fileID: 1107694201}
   - 114: {fileID: 1107694202}
+  - 58: {fileID: 1107694196}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -591,8 +591,8 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!61 &1107694196
-BoxCollider2D:
+--- !u!58 &1107694196
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
@@ -601,9 +601,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: .0582763553, y: .0291395187}
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Size: {x: 3.43899226, y: 3.41956329}
+  m_Radius: 2.66499996
 --- !u!212 &1107694197
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -628,7 +628,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: c3073162d2024c345bac7e40e7f638dc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 54e9410319d91454580886a720bde992, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &1107694198
 Transform:
@@ -637,7 +637,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1107694195}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -.0199999996, y: 9.07999992, z: 0}
+  m_LocalPosition: {x: -.140000001, y: 7.28000021, z: 0}
   m_LocalScale: {x: .100000001, y: .100000001, z: .100000001}
   m_Children: []
   m_Father: {fileID: 0}
@@ -670,14 +670,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 1107694199}
-  planet: {fileID: 279758090}
+  planet: {fileID: 1302540765}
 --- !u!114 &1107694201
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1107694195}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f727a98a5ce4a4fefadfeed13b4d05a7, type: 3}
   m_Name: 
@@ -693,10 +693,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 839c63850796142708bcefc601635ef4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  colors:
-  - {r: 0, g: 0, b: 0, a: 0}
-  - {r: 0, g: 0, b: 0, a: 0}
-  numToSpawn: 8
 --- !u!1 &1302540765
 GameObject:
   m_ObjectHideFlags: 0

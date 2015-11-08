@@ -58,7 +58,7 @@ public class PlayerBehavior : MonoBehaviour {
 	}*/
 		// Update is called once per frame
 	void FixedUpdate () {
-		planet = PlayerBehaviorRings.currentRing;
+		//planet = PlayerBehaviorRings.currentRing;
 
 		Vector3 posDiff = planet.transform.position - transform.position;
 
@@ -107,5 +107,17 @@ public class PlayerBehavior : MonoBehaviour {
 		rb.velocity += new Vector2(n.x, n.y) * 10;
 		//rb.AddForce(new Vector2(n.x,n.y)*100);
 
+	}
+
+	void OnCollisionEnter2D(Collision2D obs){
+		if (obs.gameObject.name.Contains ("Obstacle")) {
+			if (this.GetComponent<Renderer> ().material.color == obs.gameObject.GetComponent<Renderer> ().material.color) {
+				rb.velocity = -1*rb.velocity;
+//				obs.gameObject.GetComponent<Renderer>().material.color = new Color(255, 215, 0);
+			} 
+//			else {
+//				Destroy (this.gameObject);
+//			}
+		}
 	}
 }
