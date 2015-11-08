@@ -158,7 +158,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ce3768758d294505a058901bb9534c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  planet: {fileID: 0}
 --- !u!1 &157777526
 GameObject:
   m_ObjectHideFlags: 0
@@ -209,7 +208,7 @@ Transform:
   m_GameObject: {fileID: 157777526}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 5}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalScale: {x: 1.29999995, y: 1.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 10
@@ -2277,7 +2276,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ce3768758d294505a058901bb9534c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  planet: {fileID: 0}
 --- !u!1001 &1761164984
 Prefab:
   m_ObjectHideFlags: 0
@@ -2632,6 +2630,7 @@ MonoBehaviour:
   m_DampTime: .200000003
   m_Target: {fileID: 1542088844}
   planet: {fileID: 0}
+  level: 0
 --- !u!1 &2132782491 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 170918, guid: 2b427ed7e856e49c2a2c8581359f9e6c, type: 2}
@@ -2651,7 +2650,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ce3768758d294505a058901bb9534c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  planet: {fileID: 0}
 --- !u!1001 &2142008983
 Prefab:
   m_ObjectHideFlags: 0
