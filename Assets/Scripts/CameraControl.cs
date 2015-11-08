@@ -3,22 +3,26 @@ using System.Collections;
 
 public class CameraControl : MonoBehaviour {
 	public float m_DampTime = 0.2f;                 // Approximate time for the camera to refocus.                
-	public Transform m_Targets;     
+	public GameObject m_Target;     
 	private Vector3 m_MoveVelocity;                 // Reference velocity for the smooth damping of the position.
 	private Vector3 m_DesiredPosition; 
+	public GameObject planet;
 	// Use this for initialization
 	void Start () {
-	
+
 	}
 
 	void FixedUpdate ()
 	{
+		planet = m_Target.GetComponent<PlayerBehavior> ().planet;
 		Move ();
 	}
 	
 	
 	private void Move ()
 	{
+	//	Vector3 perpendicular = Quaternion.Euler(0,0,0)* new Vector3 (-posDiff.y, posDiff.x, posDiff.z);
+		
 		// Find the average position of the targets.
 		FindAveragePosition ();
 		// Smoothly transition to that position.
@@ -28,8 +32,9 @@ public class CameraControl : MonoBehaviour {
 	
 	private void FindAveragePosition ()
 	{
-		Vector3 averagePos = new Vector3 ();
-		averagePos += m_Targets.position;
+		Vector3 posDiff = planet.transform.position - m_Target.transform.position;
+		Vector3 averagePos = -posDiff.normalized * 7;
+		//Vector3 averagePos = m_Target.transform.position;
 		averagePos.z = transform.position.z;
 		// The desired position is the average position;
 		m_DesiredPosition = averagePos;

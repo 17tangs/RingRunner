@@ -1807,7 +1807,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: c3073162d2024c345bac7e40e7f638dc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 54e9410319d91454580886a720bde992, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &1542088846
 Transform:
@@ -2251,7 +2251,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 3.96000004
+  orthographic size: 2.51999998
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -2288,8 +2288,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fab494d0ffa448438cd4de92d35463f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_DampTime: 0
-  m_Targets: {fileID: 1542088846}
+  m_DampTime: .200000003
+  m_Target: {fileID: 1542088844}
+  planet: {fileID: 0}
 --- !u!1 &2132782491 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 170918, guid: 2b427ed7e856e49c2a2c8581359f9e6c, type: 2}
