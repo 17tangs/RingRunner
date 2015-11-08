@@ -21,6 +21,9 @@ public class PlayerBehaviorRings : MonoBehaviour {
 			Debug.Log ("gap");
 			currentRing.gameObject.GetComponent<Collider2D>().enabled=false;
 			currentRing.gameObject.GetComponent<SpriteRenderer>().enabled = false;
+			Debug.Log ("RaisePad"+currentRing.name.Substring (4));
+			GameObject pad = transform.Find("RaisePad"+currentRing.name.Substring (4));
+			currentRing.gameObject.GetComponentsInChildren<SpriteRenderer>()[2].enabled = false;
 			currentRing=nextRing();
 		}
 		if (obs.gameObject.name.Contains(ringNow())&&obs.gameObject.name.Contains("RaisePad")){
