@@ -4,7 +4,7 @@ using System.Collections;
 public class PlayerBehavior : MonoBehaviour {
 	public Rigidbody2D rb;
 	public GameObject planet;
-	private float acceleration = 200f;
+	private float acceleration = 150f;
 	private bool jump = false;
 	// Use this for initialization
 	void Start () {
@@ -17,31 +17,37 @@ public class PlayerBehavior : MonoBehaviour {
 	}
 	void OnCollisionExit2D(Collision2D obs){
 		if(jump == true){
-			//jump = false;
+			jump = false;
 		}
 
 	}
+	void Update(){
+	}
 	private float nextJump; 
+	private int i;
 	// Update is called once per frame
 	void FixedUpdate () {
-		//transform.rotation = Quaternion.Euler (0, 0, Mathf.Atan2(transform.position.y, transform.position.x));
-		//transform.Translate (-Vector3.right * 5 * Time.deltaTime);
-		
 		Vector3 posDiff = planet.transform.position - transform.position;
 		Vector3 perpendicular = new Vector3 (-posDiff.y, posDiff.x, posDiff.z);
-		rb.velocity = perpendicular.normalized * 5;
-		
-		
+		rb.velocity = new Vector2(perpendicular.x, perpendicular.y).normalized * 5;
 		rb.AddForce(posDiff.normalized * acceleration);
-		if (Input.GetKey (KeyCode.Space) && Time.time>nextJump) {
-				Vector3 n = Quaternion.Euler (0, 0, -30) * -posDiff;
-				rb.velocity = n.normalized * 20;
-				nextJump = Time.time + 10;
-				//rb.AddForce(n.normalized*20,ForceMode2D.Impulse);
-				//Vector3 op = transform.position;
-				//transform.position = new Vector3(op.x, op.y+0.5f, op.z);
+		Vector3 n = Quaternion.Euler (0, 0, -30) * -posDiff;
+		Debug.Log (Input.GetKey (KeyCode.Space));
+		if (Input.GetKeyDown (KeyCode.Space)){
+			if(jump == true){
+				move ();
+			}
 
+			
 		}
 		//rb.AddForce (perpendicular.normalized * 5);
+	}
+	void move(){
+		Vector3 posDiff = planet.transform.position - transform.position;
+		Vector3 n = -posDiff;//Quaternion.Euler (0, 0, -30) * -posDiff;
+//		rb.AddForce (n*10);
+		rb.velocity += new Vector2(n.x, n.y) * 10;
+
+
 	}
 }
