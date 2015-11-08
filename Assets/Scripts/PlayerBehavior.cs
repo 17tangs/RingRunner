@@ -112,7 +112,7 @@ public class PlayerBehavior : MonoBehaviour {
 	void OnCollisionEnter2D(Collision2D obs){
 		if (obs.gameObject.name.Contains ("Obstacle")) {
 			if (this.GetComponent<Renderer> ().material.color == obs.gameObject.GetComponent<Renderer> ().material.color) {
-				obs.gameObject.GetComponent<Renderer>().material.color = new Color(255, 215, 0);
+				obs.gameObject.GetComponent<Renderer>().material.color = Color.clear;
 			} 
 //			else {
 //				Destroy (this.gameObject);
