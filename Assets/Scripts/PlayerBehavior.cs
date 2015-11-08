@@ -5,6 +5,7 @@ public class PlayerBehavior : MonoBehaviour {
 	public Rigidbody2D rb;
 	public GameObject planet;
 	private float acceleration = 100f;
+	private Vector3 d;
 	// Use this for initialization
 	void Start () {
 		rb = GetComponent<Rigidbody2D> ();
@@ -25,7 +26,8 @@ public class PlayerBehavior : MonoBehaviour {
 		if (Input.GetKey (KeyCode.Space)) {
 			Debug.Log (5);
 			Vector3 n = Quaternion.Euler(0, 0, -30) * -posDiff;
-			rb.velocity = n.normalized*20;
+
+			rb.AddForce(n.normalized*20,ForceMode2D.Impulse);
 			//Vector3 op = transform.position;
 			//transform.position = new Vector3(op.x, op.y+0.5f, op.z);
 		}
