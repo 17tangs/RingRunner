@@ -8,7 +8,7 @@ public class GenerateObstacles : MonoBehaviour {
 	public static Color[] colors = new Color[9];
 	public Color c;
 	public GameObject ring;
-	public int numSpawned;
+	public int numSpawned = 0;
 	public int numToSpawn = 3;
 	float radius;
 
