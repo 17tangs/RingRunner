@@ -2079,10 +2079,10 @@ GameObject:
   - 212: {fileID: 1542088845}
   - 50: {fileID: 1542088848}
   - 114: {fileID: 1542088850}
-  - 114: {fileID: 1542088849}
   - 114: {fileID: 1542088851}
   - 58: {fileID: 1542088847}
   - 114: {fileID: 1542088852}
+  - 114: {fileID: 1542088849}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -2165,7 +2165,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1542088844}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 103c6cd3017f4ce4f898a4edcf87df83, type: 3}
+  m_Script: {fileID: 11500000, guid: d5bffa587f9a08245a56c113c0a6ade4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   ring1: {fileID: 1094173583}
