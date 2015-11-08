@@ -148,7 +148,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 530401103}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: .0399999991, y: -.129999995, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -218,7 +218,7 @@ GameObject:
   - 212: {fileID: 1542088845}
   - 114: {fileID: 1542088847}
   - 50: {fileID: 1542088848}
-  - 61: {fileID: 1542088849}
+  - 58: {fileID: 1542088849}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -250,7 +250,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: c3073162d2024c345bac7e40e7f638dc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 54e9410319d91454580886a720bde992, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &1542088846
 Transform:
@@ -259,7 +259,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1542088844}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.13000011, y: 5.61000013, z: 0}
+  m_LocalPosition: {x: 2.17000008, y: 5.53000021, z: 0}
   m_LocalScale: {x: .100000001, y: .100000001, z: .100000001}
   m_Children: []
   m_Father: {fileID: 0}
@@ -293,8 +293,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!61 &1542088849
-BoxCollider2D:
+--- !u!58 &1542088849
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
@@ -302,10 +302,10 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_Offset: {x: .098233223, y: -.0438213348}
+  m_UsedByEffector: 1
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Size: {x: 3.51251483, y: 3.40368509}
+  m_Radius: 2.66499996
 --- !u!1 &2023552055
 GameObject:
   m_ObjectHideFlags: 0
@@ -404,5 +404,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fab494d0ffa448438cd4de92d35463f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_DampTime: 0
+  m_DampTime: .200000003
   m_Targets: {fileID: 1542088846}
