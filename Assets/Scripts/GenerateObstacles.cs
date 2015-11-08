@@ -4,6 +4,7 @@ using System.Collections.Generic;
 
 public class GenerateObstacles : MonoBehaviour {
 
+	public static GameObject[] obstacles;
 	public static Color[] colors = new Color[9];
 	public Color c;
 	public GameObject ring;
@@ -13,6 +14,7 @@ public class GenerateObstacles : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		obstacles = Resources.LoadAll<GameObject>("Prefabs");
 		radius = (ring.GetComponent<CircleCollider2D> ().radius) * (ring.GetComponent<Transform>().localScale.x);
 		colors[0] = Color.blue;
 		colors[1] = Color.red;
@@ -27,7 +29,9 @@ public class GenerateObstacles : MonoBehaviour {
 
 	void SpawnRandomObject() 
 	{    
-		GameObject myObj = Resources.Load<GameObject>("Obstacle") as GameObject;
+		//spawns item in array position between 0 and 100
+		int whichItem = Random.Range (0, numToSpawn);
+		GameObject myObj = Instantiate (obstacles [whichItem]) as GameObject;
 		numSpawned++;
 		float theta = Random.Range(-180, 180);
 		float x = radius*Mathf.Cos(theta);
