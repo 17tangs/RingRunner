@@ -16,8 +16,7 @@ public class Obstacles : MonoBehaviour {
 			if (this.GetComponent<Renderer> ().material.color == obs.gameObject.GetComponent<Renderer> ().material.color) {
 				obs.gameObject.GetComponent<Renderer>().material.color = new Color(255, 215, 0);
 
-			} else {
-				Destroy (this.gameObject);
+	
 			}
 		}
 	}
