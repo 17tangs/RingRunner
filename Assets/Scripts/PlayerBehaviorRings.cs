@@ -18,15 +18,20 @@ public class PlayerBehaviorRings : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D obs){
-		if (obs.gameObject.name.Contains(ringNow())){
+		if (obs.gameObject.name.Contains(ringNow())&&obs.gameObject.name.Contains("Gap")){
 			Debug.Log ("gap");
 			currentRing.gameObject.GetComponent<Collider2D>().enabled=false;
 			currentRing=nextRing();
 		}
+		if (obs.gameObject.name.Contains(ringNow())&&obs.gameObject.name.Contains("RaisePad")){
+			Debug.Log ("raise");
+			currentRing=prevRing();
+			currentRing.gameObject.GetComponent<Collider2D>().enabled=true;
+		}
 	}
 
 	string ringNow(){
-		return "Gap"+currentRing.gameObject.name.Substring (4);
+		return currentRing.gameObject.name.Substring (4);
 	}
 
 	GameObject nextRing(){
@@ -34,6 +39,14 @@ public class PlayerBehaviorRings : MonoBehaviour {
 			return ring2;
 		else if (currentRing == ring2)
 			return ring3;
+		return currentRing;
+	}
+
+	GameObject prevRing(){
+		if (currentRing == ring2)
+			return ring1;
+		else if (currentRing == ring3)
+			return ring2;
 		return currentRing;
 	}
 }
