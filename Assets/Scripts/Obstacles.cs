@@ -12,10 +12,16 @@ public class Obstacles : MonoBehaviour {
 	}
 
 	void OnCollisionEnter2D(Collision2D obs){
-		if (obs.gameObject.name.Contains("Obstacle")) {
-			Destroy (this.gameObject);
+		if (obs.gameObject.name.Contains ("Obstacle")) {
+			if (this.GetComponent<Renderer> ().material.color == obs.gameObject.GetComponent<Renderer> ().material.color) {
+				obs.gameObject.GetComponent<Renderer> ().material.color = Color.black;
+			} else {
+				Destroy (this.gameObject);
+			}
 		}
 	}
+
+
 
 }
 
