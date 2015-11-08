@@ -58,6 +58,8 @@ public class PlayerBehavior : MonoBehaviour {
 	}*/
 		// Update is called once per frame
 	void FixedUpdate () {
+		planet = PlayerBehaviorRings.currentRing;
+
 		Vector3 posDiff = planet.transform.position - transform.position;
 
 		float magnitude = transform.localScale.x * GetComponent<CircleCollider2D> ().radius + 
