@@ -24,12 +24,12 @@ public class GenerateRaisePads : MonoBehaviour {
 		myObj.gameObject.name = "RaisePad"+ring.name.Substring(4);
 		numSpawned++;
 		float theta = Random.Range(-180, 180);
-		float x = radius*Mathf.Cos(toRad(theta));
-		float y = radius*Mathf.Sin(toRad(theta));
-		float ang = radius*Mathf.Tan(toRad(theta));
+		float x = radius*Mathf.Cos(theta);
+		float y = radius*Mathf.Sin(theta);
+		float ang = radius*Mathf.Tan(theta);
 		//where your instantiated object spawns from
 		myObj.transform.position = new Vector3(x, y, 0);
-		myObj.transform.rotation = Quaternion.AngleAxis(toDeg (ang)+90, Vector3.forward);
+		myObj.transform.rotation = Quaternion.AngleAxis(toDeg(ang)+90, Vector3.forward);
 	}
 	
 	// Update is called once per frame
