@@ -403,6 +403,18 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6852810, guid: 2b427ed7e856e49c2a2c8581359f9e6c, type: 2}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6874086, guid: 2b427ed7e856e49c2a2c8581359f9e6c, type: 2}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6095416, guid: 2b427ed7e856e49c2a2c8581359f9e6c, type: 2}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2b427ed7e856e49c2a2c8581359f9e6c, type: 2}
   m_IsPrefabParent: 0
@@ -1263,6 +1275,18 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6852810, guid: 2b427ed7e856e49c2a2c8581359f9e6c, type: 2}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6874086, guid: 2b427ed7e856e49c2a2c8581359f9e6c, type: 2}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6095416, guid: 2b427ed7e856e49c2a2c8581359f9e6c, type: 2}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2b427ed7e856e49c2a2c8581359f9e6c, type: 2}
   m_IsPrefabParent: 0
@@ -1625,7 +1649,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1173502813
 Transform:
   m_ObjectHideFlags: 0
@@ -1656,6 +1680,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   c: {r: 0, g: 0, b: 0, a: 0}
   ring: {fileID: 1094173583}
+  numSpawned: 0
+  numToSpawn: 3
 --- !u!1 &1252116850
 GameObject:
   m_ObjectHideFlags: 0
@@ -2023,6 +2049,18 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6852810, guid: 2b427ed7e856e49c2a2c8581359f9e6c, type: 2}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6874086, guid: 2b427ed7e856e49c2a2c8581359f9e6c, type: 2}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6095416, guid: 2b427ed7e856e49c2a2c8581359f9e6c, type: 2}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2b427ed7e856e49c2a2c8581359f9e6c, type: 2}
   m_IsPrefabParent: 0
@@ -2044,6 +2082,7 @@ GameObject:
   - 114: {fileID: 1542088849}
   - 114: {fileID: 1542088851}
   - 58: {fileID: 1542088847}
+  - 114: {fileID: 1542088852}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -2157,6 +2196,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f727a98a5ce4a4fefadfeed13b4d05a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1542088852
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1542088844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 839c63850796142708bcefc601635ef4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1562080482 stripped
 Transform:
   m_PrefabParentObject: {fileID: 446910, guid: 2b427ed7e856e49c2a2c8581359f9e6c, type: 2}
@@ -2180,7 +2230,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1655730142
 Transform:
   m_ObjectHideFlags: 0
@@ -2211,6 +2261,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   c: {r: 0, g: 0, b: 0, a: 0}
   ring: {fileID: 1933066840}
+  numSpawned: 0
+  numToSpawn: 3
 --- !u!1 &1678418710
 GameObject:
   m_ObjectHideFlags: 0
@@ -2226,7 +2278,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1678418711
 Transform:
   m_ObjectHideFlags: 0
@@ -2257,6 +2309,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   c: {r: 0, g: 0, b: 0, a: 0}
   ring: {fileID: 949542645}
+  numSpawned: 0
+  numToSpawn: 3
 --- !u!1 &1710045276 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 170918, guid: 2b427ed7e856e49c2a2c8581359f9e6c, type: 2}
@@ -2371,6 +2425,18 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 170918, guid: 2b427ed7e856e49c2a2c8581359f9e6c, type: 2}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6095416, guid: 2b427ed7e856e49c2a2c8581359f9e6c, type: 2}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6874086, guid: 2b427ed7e856e49c2a2c8581359f9e6c, type: 2}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6852810, guid: 2b427ed7e856e49c2a2c8581359f9e6c, type: 2}
+      propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
@@ -2707,6 +2773,18 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 170918, guid: 2b427ed7e856e49c2a2c8581359f9e6c, type: 2}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6874086, guid: 2b427ed7e856e49c2a2c8581359f9e6c, type: 2}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6095416, guid: 2b427ed7e856e49c2a2c8581359f9e6c, type: 2}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6852810, guid: 2b427ed7e856e49c2a2c8581359f9e6c, type: 2}
+      propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
