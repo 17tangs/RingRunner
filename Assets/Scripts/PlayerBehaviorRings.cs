@@ -2,8 +2,6 @@
 using System.Collections;
 
 public class PlayerBehaviorRings : MonoBehaviour {
-	public Rigidbody2D rb;
-	public GameObject planet;
 	public static GameObject currentRing;
 	public GameObject ring1;
 	public GameObject ring2;
