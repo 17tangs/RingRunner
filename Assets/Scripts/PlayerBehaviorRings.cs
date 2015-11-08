@@ -12,14 +12,19 @@ public class PlayerBehaviorRings : MonoBehaviour {
 		currentRing = ring1;
 	}
 
-	void OnCollisionEnter2D(Collision2D obs){
-		Debug.Log ("collision");
+	void Update () {
+		Debug.Log (currentRing.gameObject.name);
+	}
 
-		if (obs.gameObject.name.Contains("Gap")) {
+	void OnTriggerEnter2D(Collider2D obs){
+		if (obs.gameObject.name.Contains(ringNow())){
 			Debug.Log ("gap");
 			currentRing.gameObject.GetComponent<Collider2D>().enabled=false;
 			currentRing=ring2;
 		}
 	}
-	
+
+	string ringNow(){
+		return "Gap"+currentRing.gameObject.name.Substring (4);
+	}
 }
