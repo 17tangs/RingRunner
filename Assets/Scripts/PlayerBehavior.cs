@@ -80,7 +80,6 @@ public class PlayerBehavior : MonoBehaviour {
 		if (Input.GetAxis ("Jump")==1){
 			if(jump == true){
 				//desired = (transform.position - posDiff)*0.7f;
-				Debug.Log ("new: " + new Vector2(n.x,n.y));
 				rb.velocity = new Vector2(n.x, n.y) * 10;
 
 				//move ();
@@ -88,7 +87,6 @@ public class PlayerBehavior : MonoBehaviour {
 
 			
 		}
-		Debug.Log (rb.velocity);
 		//if (jump == true) {
 		//	transform.position = Vector3.Lerp (transform.position, desired, 5);
 		//}

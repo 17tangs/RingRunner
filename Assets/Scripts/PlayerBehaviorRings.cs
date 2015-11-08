@@ -13,7 +13,6 @@ public class PlayerBehaviorRings : MonoBehaviour {
 	}
 
 	void Update () {
-		Debug.Log (currentRing.gameObject.name);
 	}
 
 	void OnTriggerEnter2D(Collider2D obs){
@@ -21,9 +20,12 @@ public class PlayerBehaviorRings : MonoBehaviour {
 			Debug.Log ("gap");
 			currentRing.gameObject.GetComponent<Collider2D>().enabled=false;
 			currentRing.gameObject.GetComponent<SpriteRenderer>().enabled = false;
-			Debug.Log ("RaisePad"+currentRing.name.Substring (4));
-			GameObject pad = transform.Find("RaisePad"+currentRing.name.Substring (4));
-			currentRing.gameObject.GetComponentsInChildren<SpriteRenderer>()[2].enabled = false;
+			if(currentRing.name.Substring(4)!="1"){
+				GameObject pad = GameObject.Find("RaisePad"+currentRing.name.Substring (4));
+				pad.GetComponent<SpriteRenderer>().enabled = false;
+			}
+			//Debug.Log (pad.name);
+			//currentRing.gameObject.GetComponentsInChildren<SpriteRenderer>()[2].enabled = false;
 			currentRing=nextRing();
 		}
 		if (obs.gameObject.name.Contains(ringNow())&&obs.gameObject.name.Contains("RaisePad")){
@@ -31,6 +33,10 @@ public class PlayerBehaviorRings : MonoBehaviour {
 			currentRing=prevRing();
 			currentRing.gameObject.GetComponent<Collider2D>().enabled=true;
 			currentRing.gameObject.GetComponent<SpriteRenderer>().enabled = true;
+			if(currentRing.name.Substring(4)!="1"){
+				GameObject pad = GameObject.Find("RaisePad"+currentRing.name.Substring (4));
+				pad.GetComponent<SpriteRenderer>().enabled = true;
+			}
 		}
 	}
 
