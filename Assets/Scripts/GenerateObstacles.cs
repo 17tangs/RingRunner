@@ -5,7 +5,7 @@ using System.Collections.Generic;
 public class GenerateObstacles : MonoBehaviour {
 
 	public static GameObject[] obstacles;
-	public List<Color> colors;
+	public static List<Color> colors;
 	public Color c;
 	public GameObject ring;
 	public static int numSpawned = 0;
@@ -32,7 +32,6 @@ public class GenerateObstacles : MonoBehaviour {
 		c = new Color((Random.Range (0.0f, 1.0f)), (Random.Range (0.0f, 1.0f)), (Random.Range (0.0f, 1.0f)));
 		myObj.GetComponent<Renderer>().material.color = c;
 		colors.Add (c);
-		print (colors);
 	}
 	
 	// Update is called once per frame

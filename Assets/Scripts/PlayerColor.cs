@@ -1,19 +1,19 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class PlayerColor : MonoBehaviour {
 
-	GenerateObstacles colors,numToSpawn;
-	
+	public List<Color> colors;
+	public float numToSpawn = 8;
+
 	IEnumerator Start(){
-		colors = GetComponent<GenerateObstacles>();
-		float numToSpawn = Get<GenerateObstacles>();
+		colors = GenerateObstacles.colors;
 		yield return new WaitForEndOfFrame();
 	}
 
 	// Update is called once per frame
 	void Update () {
-		this.GetComponent<Renderer>().material.color = colors[Random.Range (0f, numToSpawn)];
-		WaitForSeconds (10);
+		this.GetComponent<Renderer>().material.color = colors[1];
 	}
 }

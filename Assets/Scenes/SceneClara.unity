@@ -568,7 +568,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 189df284210df40d0997cd519d4cccf1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  colors: []
   c: {r: 0, g: 0, b: 0, a: 0}
   ring: {fileID: 1302540765}
 --- !u!1 &1107694195
@@ -694,6 +693,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 839c63850796142708bcefc601635ef4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  colors: []
+  numToSpawn: 8
 --- !u!1 &1302540765
 GameObject:
   m_ObjectHideFlags: 0
