@@ -6,13 +6,13 @@ public class GenerateRaisePads : MonoBehaviour {
 	public static GameObject[] pads;
 	public GameObject ring;
 	public int numSpawned = 0;
-	public int numToSpawn = 8;
+	public int numToSpawn = 2;
 	float radius;
 	
 	// Use this for initialization
 	void Start () {
 		numSpawned = 0;
-		radius = (ring.GetComponent<CircleCollider2D> ().radius) * (ring.GetComponent<Transform>().localScale.x);
+		radius = (float).3+(ring.GetComponent<CircleCollider2D> ().radius) * (ring.GetComponent<Transform>().localScale.x);
 		pads=Resources.LoadAll<GameObject>("Prefabs");
 	}
 	
