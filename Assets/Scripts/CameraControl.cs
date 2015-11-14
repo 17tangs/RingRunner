@@ -15,7 +15,7 @@ public class CameraControl : MonoBehaviour {
 
 	void FixedUpdate ()
 	{
-		planet = m_Target.GetComponent<PlayerBehavior> ().planet;
+		planet = m_Target.GetComponent<PlayerPhysics> ().planet;
 		level = planet.GetComponent<Transform> ().localScale.x*5;
 		Move ();
 	}
