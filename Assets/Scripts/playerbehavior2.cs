@@ -14,18 +14,29 @@ public class playerbehavior2 : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		rb = GetComponent<Rigidbody2D> ();
-
+		planet = GameObject.Find ("Ring4");
+		Debug.Log (planet);
 	}
 	
 	// Update is called once per frame
 	void Update () {
-	
+		if (Input.GetKey ("1")) {
+			planet = GameObject.Find ("Ring1");
+		}
+		else if(Input.GetKey ("2")) {
+			planet = GameObject.Find ("Ring2");
+		}
+		else if(Input.GetKey ("3")) {
+			planet = GameObject.Find ("Ring3");
+		}
+		else if(Input.GetKey ("4")) {
+			planet = GameObject.Find ("Ring4");
+		}
 	}
 
 	void FixedUpdate () {
 		//move ();
 		Vector3 posDiff = planet.transform.position - transform.position;
-
 		//rb.AddForce(posDiff.normalized * acceleration);
 		if (theta > 180f) {
 			theta = -180f;

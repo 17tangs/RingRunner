@@ -2370,6 +2370,8 @@ GameObject:
   - 58: {fileID: 1542088847}
   - 114: {fileID: 1542088852}
   - 114: {fileID: 1542088849}
+  - 114: {fileID: 1542088853}
+  - 50: {fileID: 1542088848}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -2428,6 +2430,22 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 2.65499997
+--- !u!50 &1542088848
+Rigidbody2D:
+  serializedVersion: 2
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1542088844}
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: .0500000007
+  m_GravityScale: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!114 &1542088849
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2449,7 +2467,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1542088844}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 338c873039e4d334e847439f31450b04, type: 3}
   m_Name: 
@@ -2479,6 +2497,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 839c63850796142708bcefc601635ef4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1542088853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1542088844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9407a587c18432489a17c608c80057a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 1542088848}
+  planet: {fileID: 1094173583}
 --- !u!4 &1562080482 stripped
 Transform:
   m_PrefabParentObject: {fileID: 446910, guid: 2b427ed7e856e49c2a2c8581359f9e6c, type: 2}

@@ -10,12 +10,12 @@ public class CameraControl : MonoBehaviour {
 	public float level;
 	// Use this for initialization
 	void Start () {
-
 	}
 
 	void FixedUpdate ()
 	{
-		planet = m_Target.GetComponent<PlayerPhysics> ().planet;
+		m_Target = GameObject.Find ("Player");
+		planet = m_Target.GetComponent<PlayerBehavior> ().planet;
 		level = planet.GetComponent<Transform> ().localScale.x*5;
 		Move ();
 	}
