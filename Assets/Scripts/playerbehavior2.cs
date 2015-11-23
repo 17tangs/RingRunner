@@ -4,20 +4,20 @@ using System.Collections;
 public class playerbehavior2 : MonoBehaviour {
 	public GameObject planet;
 	private float radius;
-	public float theta = 0;
-	private int current = 4;
+	public float theta = 0f;
+	public int revolution = -1;
+	private int current = 3;
 	[Range(0.00f, 5.00f)]
-	public float AngleIncrement = 1.3f ;
+	public float AngleIncrement = 1f ;
 	void Start () {
-		planet = GameObject.Find ("Ring4");
-		Debug.Log (planet);
+		planet = GameObject.Find ("Ring3");
 	}
 	
 	void Update () {
 		planet = GameObject.Find ("Ring"+ current.ToString());
 		if (Input.GetKeyDown (KeyCode.UpArrow)) 
 		{
-			if (current < 4) 
+			if (current < 3) 
 			{
 				current++;
 			}
@@ -31,9 +31,16 @@ public class playerbehavior2 : MonoBehaviour {
 		}
 
 	}
-
+	void OnTriggerStay2D(Collider2D collider){
+		Destroy (GameObject.Find ("Player"));
+		//Destroy (this);
+	}
 	void FixedUpdate () {
+		AngleIncrement += 0.0005f;
 		Vector3 posDiff = planet.transform.position - transform.position;
+		if (Mathf.Abs (theta) < 0.5f) {
+			revolution++;
+		}
 		if (theta > 180f) {
 			theta = -180f;
 		}

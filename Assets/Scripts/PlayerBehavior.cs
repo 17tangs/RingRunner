@@ -23,11 +23,14 @@ public class PlayerBehavior : MonoBehaviour {
 		move ();
 
 	}
+	void OnCollisionEnter2D(Collision2D collider){
+		Destroy (this);
+		Debug.Log (1);
+	}
 
 	void move(){
 		Vector3 posDiff = planet.transform.position - transform.position;
 		if (Input.GetAxis ("Jump") == 1) {
-			Debug.Log(true);
 			if (allow == true) {
 				newpos = -posDiff.normalized*height;
 				is_jumping = true;
