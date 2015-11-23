@@ -9,8 +9,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 444102}
   - 212: {fileID: 21282340}
-  - 58: {fileID: 5863764}
   - 114: {fileID: 11404794}
+  - 58: {fileID: 5806788}
   m_Layer: 0
   m_Name: Ring
   m_TagString: Untagged
@@ -30,7 +30,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!58 &5863764
+--- !u!58 &5806788
 CircleCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}

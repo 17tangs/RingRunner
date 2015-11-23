@@ -81,7 +81,7 @@ CircleCollider2D:
   m_GameObject: {fileID: 157024}
   m_Enabled: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
@@ -94,7 +94,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 157024}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 338c873039e4d334e847439f31450b04, type: 3}
+  m_Script: {fileID: 11500000, guid: 8c49422a3f834410bbcad9a109c0372e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   planet: {fileID: 0}
@@ -108,11 +108,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 113862}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d362c434d1abad4f9ea8608d1ba55bb, type: 3}
+  m_Script: {fileID: 11500000, guid: 709b401a184e94e19b945832f281388a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   planet: {fileID: 0}
   theta: 0
+  revolution: -1
   AngleIncrement: 1.10000002
 --- !u!212 &21271824
 SpriteRenderer:
@@ -166,7 +167,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_GravityScale
@@ -178,11 +179,35 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Mass
-      value: 100
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_UsedByEffector
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_LinearDrag
+      value: 1.26999998
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_SleepingMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_AngularDrag
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: theta
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: revolution
+      value: -1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
