@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class playerbehavior2 : MonoBehaviour {
+public class PlayerRotation : MonoBehaviour {
 	public GameObject planet;
 	private float radius;
 	public float theta = 0f;

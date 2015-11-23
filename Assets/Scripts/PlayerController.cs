@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PlayerBehavior : MonoBehaviour {
+public class PlayerController : MonoBehaviour {
 	public GameObject planet;
 	public float height = 3f;
 	public float gravity = 5f;
@@ -25,7 +25,6 @@ public class PlayerBehavior : MonoBehaviour {
 	}
 	void OnCollisionEnter2D(Collision2D collider){
 		Destroy (this);
-		Debug.Log (1);
 	}
 
 	void move(){

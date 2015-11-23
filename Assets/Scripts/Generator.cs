@@ -1,17 +1,16 @@
 ﻿using UnityEngine;
 using System.Collections;
 /*
-TODO:   Collision detection between player and bars
-		Public variables of this script used in other scripts (no magic numbers)
+TODO:	Public variables of this script used in other scripts (no magic numbers)
 		Obstacles set up, collision
 		Color
+		Lerp the transistion between orbits
 		Delay for player to move
 		Camera control zoom in 
 		Automatically regenerate different bars
-		UI (how many loops)
 */
-public class Rings : MonoBehaviour {
-	public GameObject prefab;
+public class Generator : MonoBehaviour {
+	public GameObject ring;
 	public GameObject player;	
 	public GameObject bar;
 	//scale for the obstacles to fit in
@@ -44,7 +43,7 @@ public class Rings : MonoBehaviour {
 	void Start () {
 		Instantiate (player);
 		for (int i = 0; i<numRing; i++) {
-			GameObject a = Instantiate (prefab);
+			GameObject a = Instantiate (ring);
 			int k = i+1;
 			a.name = "Ring" + k.ToString();
 			a.transform.localScale += new Vector3(0.25f*i, 0.25f*i, 0.25f*i);
