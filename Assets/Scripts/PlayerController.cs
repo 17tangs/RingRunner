@@ -2,15 +2,19 @@
 using System.Collections;
 
 public class PlayerController : MonoBehaviour {
-	public GameObject planet;
-	public float height = 3f;
-	public float gravity = 5f;
+	private GameObject planet;
+	private float height;
+	private float gravity;
 	private bool is_jumping = false;
 	private bool allow = true;
 	private Vector3 newpos = Vector3.zero;
 	// Use this for initialization
 	void Start () {
-
+		height = GameObject.Find ("Generator").GetComponent<Generator> ().height;
+		gravity = GameObject.Find ("Generator").GetComponent<Generator> ().gravity;
+	}
+	public GameObject GetPlanet(){
+		return planet;
 	}
 
 	private float nextJump; 

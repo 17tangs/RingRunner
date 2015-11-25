@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 /*
-TODO:	Public variables of this script used in other scripts (no magic numbers)
+TODO:
 		Obstacles set up, collision
 		Color
 		Lerp the transistion between orbits
@@ -10,17 +10,21 @@ TODO:	Public variables of this script used in other scripts (no magic numbers)
 		Automatically regenerate different bars
 */
 public class Generator : MonoBehaviour {
+
 	public GameObject ring;
 	public GameObject player;	
 	public GameObject bar;
+	public int numRing=4;
+	public int numBar=4;
+	public float height = 3f;
+	public float gravity = 5f;
+
+	private int separation = 40;
 	//scale for the obstacles to fit in
 	private const float scale = 0.23743f;//0.25f*prefab.GetComponent<CircleCollider2D>().radius/bar.GetComponent<BoxCollider2D>().size.x; 
 	//half a gap between rings
 	private const float space = 1.275f/2.0f;
-	public int numRing=4;
-	public int numBar=4;
-	private int separation = 40;
-	// Use this for initialization
+
 	bool duplicates(int[] arr){
 		for (int y = 0; y<numBar; y++) {
 			for (int x = y+1; x<numBar; x++) {

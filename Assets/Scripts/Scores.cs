@@ -11,7 +11,7 @@ public class Scores : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		GameObject p = GameObject.Find ("P(Clone)");
-		GetComponent<Text> ().text = p.GetComponent<PlayerRotation> ().revolution.ToString();
+		GetComponent<Text> ().text = p.GetComponent<PlayerRotation> ().GetRevolution().ToString();
 		
 	}
 }

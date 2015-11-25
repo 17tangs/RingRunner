@@ -2,17 +2,20 @@
 using System.Collections;
 
 public class PlayerRotation : MonoBehaviour {
-	public GameObject planet;
+	private GameObject planet;
 	private float radius;
 	public float theta = 0f;
-	public int revolution = -1;
+	private int revolution = -1;
 	private int current = 3;
 	[Range(0.00f, 5.00f)]
-	public float AngleIncrement = 1f ;
+	public float AngleIncrement = 1f;
+
 	void Start () {
 		planet = GameObject.Find ("Ring3");
 	}
-	
+	public int GetRevolution(){
+		return revolution;
+	}
 	void Update () {
 		planet = GameObject.Find ("Ring"+ current.ToString());
 		if (Input.GetKeyDown (KeyCode.UpArrow)) 

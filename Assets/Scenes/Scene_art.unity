@@ -395,6 +395,8 @@ MonoBehaviour:
   bar: {fileID: 188914, guid: 67c69c85e678b42f186dfc7e407a5d7d, type: 2}
   numRing: 4
   numBar: 4
+  height: 1.70000005
+  gravity: 5
 --- !u!4 &971617425
 Transform:
   m_ObjectHideFlags: 0
