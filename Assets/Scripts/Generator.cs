@@ -53,10 +53,14 @@ public class Generator : MonoBehaviour {
 			a.transform.localScale += new Vector3(0.25f*i, 0.25f*i, 0.25f*i);
 			a.GetComponent<SpriteRenderer>().material.SetColor("_Color", new Color((50+i*50f)/255.0f, (175f+i*20f)/255.0f, 1f));
 		}
+		BarGenerator ();
+
+	}
+	void BarGenerator(){
 		int[] angles = new int[numBar];
 		for (int i = 0; i<numBar; i++) {
-			int k  = Random.Range (1, 360/separation);
-			angles[i] = k;
+			int k = Random.Range (1, 360 / separation);
+			angles [i] = k;
 		}
 		while (duplicates (angles)) {
 			replace (angles);
@@ -66,22 +70,21 @@ public class Generator : MonoBehaviour {
 			angles [i] = angles [i] * separation;
 		}
 		for (int i = 0; i<numBar; i++) {
-			float k = angles[i];
-			int gap = Random.Range (1, numRing-1);
+			float k = angles [i];
+			int gap = Random.Range (1, numRing - 1);
 			for (int x = 1; x<=numRing-1; x++) {
-				if(x!=gap){
-					GameObject ring =  GameObject.Find ("Ring" + x.ToString());
-					float r = ring.GetComponent<CircleCollider2D>().radius*ring.transform.localScale.x;
-					Vector3 bar_pos = new Vector3(Mathf.Cos(k*Mathf.PI/180.0f)*(r+space), Mathf.Sin (k*Mathf.PI/180.0f)*(r+space), 0);
+				if (x != gap) {
+					GameObject ring = GameObject.Find ("Ring" + x.ToString ());
+					float r = ring.GetComponent<CircleCollider2D> ().radius * ring.transform.localScale.x;
+					Vector3 bar_pos = new Vector3 (Mathf.Cos (k * Mathf.PI / 180.0f) * (r + space), Mathf.Sin (k * Mathf.PI / 180.0f) * (r + space), 0);
 					Quaternion q = Quaternion.identity;
-					q.eulerAngles = new Vector3(0.0f,0.0f,k-90.0f);
+					q.eulerAngles = new Vector3 (0.0f, 0.0f, k - 90.0f);
 					Instantiate (bar, bar_pos, q);
-					bar.transform.localScale = new Vector3(scale,scale,0);
+					bar.transform.localScale = new Vector3 (scale, scale, 0);
 				}
 			}
 		}
 	}
-	
 	// Update is called once per frame
 	void Update () {
 	
